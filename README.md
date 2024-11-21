@@ -23,7 +23,7 @@ Since I downloaded the works in my initial corpus directly from the Project Gute
 The processing done with spaCy in the original Notebook of this repository does a couple of annotation tasks such as: tokenization, lemmatization, extracting parts-of-speech for each token, and extracts the recognized verbs from each text. I used the simple English Language model from spaCy but more accurate results could have been obtained using the more advanced Language models. To get the mentioned annotations I used spaCy functions such as token.text, token.lemma_, token.pos_, token.pos_ == 'VERB'.
 
 ### Format of the Files:
-The format of the files in the repository are: .txt for the text documents, .csv for the tables with the annotated data ('Corpus_data_and_annotations.csv') and the corpus metadata (which is generated through the code in the Notebook), and .ipnyb for the Jupyter Notebooks.
+The format of the files in the repository are: .txt for the text documents, .csv for the tables with the annotated data (Corpus_data_and_annotations.csv) and the corpus metadata (generated through the code in the Notebook), and .ipnyb for the Jupyter Notebooks.
 
 The columns in the annotated .csv file and their descriptions are illustrated in the table below:
 | Header        |Description            |
