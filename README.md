@@ -7,22 +7,22 @@ Unfortunately, a rather modest part of Pessoa's (or his heteronyms) body of work
 
 An important digital resource of Pessoa's work can be found at https://www.pessoadigital.pt/en/index.html. While in Portuguese, this resource gathered a large part of Pessoa's (and his heteronyms') corpus and digitized them in machine readable format, along with each text's transcription. This resource could serve as a starting point for translating Pessoa's works into English and using annotation tools as the ones presented in the code below, in order to process and extract important linguistic features from his work. For speakers of Portuguese, the spaCy module that we will use in the code below (which for our case is set to the English pipeline) can be used with the Portuguese pipeline and perform similar tasks of text processing and annotation.
 
-## Corpus Description and Text Selection Criteria:
+### Corpus Description and Text Selection Criteria:
 The corpus in this repository contains a small dataset of three collections of Fernando Pessoa's work: [35 Sonnets](https://www.gutenberg.org/ebooks/19978), [English Poems: Volume 01 (of 2)](https://www.gutenberg.org/ebooks/66039), [English Poems: Volume 02 (of 2)](https://www.gutenberg.org/ebooks/66040), all taken from the Project Gutenberg website. The choice of these works is not arbitrary though: these are three works that did not need to be translated, since Pessoa wrote them in English originally and published under his own name. Some hypotheses could be explored already on this dataset, without running into the issue of having to account for the translation on which the analysis was done. 
 
-## Target Audience and Intedend Use of the Corpus:
+### Target Audience and Intedend Use of the Corpus:
 As mentioned briefly in the Project Description, the target audience are digital humanities scholars or scholars from other disciplines that have a passion for doing text analysis using computational tools. The corpus is intended to serve the production of knowledge by analyzing Pessoa's works through methods that were difficult or practically impossible before, i.e computational processing of large corpora of texts. Given Pessoa's rich literary universe, I believe that a lot of interesting research questions can be posed on the basis of this (developing) corpus. The most important thing is that researchers or other people using this corpus and the tools presented here are aware of the limitations of this corpus at any given moment and that responsible contribution or extraction of information from this repository is performed.
 
-## Data Collection Process:
+### Data Collection Process:
 I downloaded the files directly from the Project Gutenberg website. The Project Gutenberg resource from which I extracted the metadata for the three works present in the corpus was downloaded from https://www.gutenberg.org/cache/epub/feeds/.
 
-## Cleaning and Preprocessing steps:
+### Cleaning and Preprocessing steps:
 Since I downloaded the works in my initial corpus directly from the Project Gutenberg website I needed to perform some processing before I could get to the annotation, since Project Gutenberg includes a lengthy description of its licensing policy and other information that would impede a successful annotation of the texts. I used the simple-cleaner module from the gutenberg-cleaner package which was designed to do remove any information from the documents besides anything specifically relevant for the texts that they contain. Furthermore, I had to remove some unwanted characters like new lines (\n) in order to avoid the processing with spaCy to pick up on them and affect the annotation process. 
 
-## Annotations:
+### Annotations:
 The processing done with spaCy in the original Notebook of this repository does a couple of annotation tasks such as: tokenization, lemmatization, extracting parts-of-speech for each token, and extracts the recognized verbs from each text. I used the simple English Language model from spaCy but more accurate results could have been obtained using the more advanced Language models. To get the mentioned annotations I used spaCy functions such as token.text, token.lemma_, token.pos_, token.pos_ == 'VERB'.
 
-## Format of the Files:
+### Format of the Files:
 The format of the files in the repository are: .txt for the text documents, .csv for the tables with the annotated data and the corpus metadata and .ipnyb for the Jupyter Notebooks.
 The columns in the annotated .csv file and their descriptions are illustrated in the table below:
 | Header        |Description            |
@@ -44,6 +44,6 @@ The columns in the annotated .csv file and their descriptions are illustrated in
 | POS |The detected parts-of-speech of the tokens contained in the corpus' texts      |
 | Verbs |The detected verbs in the corpus' texts      |
 
-# License
+## License
 The dataset is available under the terms of the [Project Gutenberg License](https://www.gutenberg.org/policy/license.html).
 
